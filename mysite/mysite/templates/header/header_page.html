@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-{% load bootstrap4 %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
@@ -11,31 +10,13 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    {%for head in self.carousal_Header.all %}
-                    {%if head.internal_url%}
-                    <a class="navbar-brand" href="{{head.internal_url}}">{{head.title}}</a>
-                    {%elif head.external_url%}
-                    <a class="navbar-brand" href="{{head.external_url}}">{{head.title}}</a>
-                    {%endif%}
+                    {% for n in self.content%}
+                    {{n}}
                     {%endfor%}
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                       aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </div>
 </nav>
+
 {%endblock%}

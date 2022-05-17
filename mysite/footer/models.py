@@ -28,9 +28,10 @@ class FooterPage(Page):
     max_count = 1
     sub_title = models.CharField(max_length=100, blank=True, null=True)
     content_panels = Page.content_panels + [
-        # StreamFieldPanel("content"),
+
         # FieldPanel("sub_title"),
-        InlinePanel("footer_carouse")
+        InlinePanel("footer_carouse"),
+        # StreamFieldPanel("content"),
 
     ]
 

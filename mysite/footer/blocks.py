@@ -3,6 +3,7 @@ from wagtail.core.blocks import StructBlock, PageChooserBlock
 
 
 class FooterBlock(blocks.StructBlock):
+    sub_title = blocks.CharBlock(required=True)
     cards = blocks.ListBlock(
         blocks.StructBlock([
             ("text", blocks.CharBlock(required=True)),
